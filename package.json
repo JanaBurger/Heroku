@@ -1,14 +1,14 @@
 {
-	"name" : "name-of-project",
-	"version" : "0.0.0",
-	"description" : "enter a description of the project here",
-	"author" : "enter your name here",
-	"main" : "filename-of-main-script.js",
+	"name" : "NodeTest",
+	"version" : "0.0.1",
+	"description" : "first node test",
+	"author" : "Jirka Dell'Oro-Friedl'",
+	"main" : "NodeTest.js",
 	"scripts" : {
-		"start" : "node filename-of-start-script.js"
+		"start" : "node NodeTest.js"
 	},
 	"engines" : {
-		"node" : "5.8.0"
+		"node" : "6.10.3"
 	},
 	"dependencies" : {
 	}
