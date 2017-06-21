@@ -2,10 +2,10 @@
 	"name" : "NodeTest",
 	"version" : "0.0.1",
 	"description" : "first node test",
-	"author" : "Jirka Dell'Oro-Friedl'",
-	"main" : "NodeTest.js",
+	"author" : "Jana Burger",
+	"main" : "eisTest.js",
 	"scripts" : {
-		"start" : "node aufgabe10.js"
+		"start" : "node eisTest.js"
 	},
 	"engines" : {
 		"node" : "6.10.3"
