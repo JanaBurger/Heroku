@@ -3,9 +3,9 @@
 	"version" : "0.0.1",
 	"description" : "first node test",
 	"author" : "Jana Burger",
-	"main" : "eisTest.js",
+	"main" : "NodeTest.js",
 	"scripts" : {
-		"start" : "node eisTest.js"
+		"start" : "node NodeTest.js"
 	},
 	"engines" : {
 		"node" : "6.10.3"
