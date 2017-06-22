@@ -1,41 +1,36 @@
-console.log("Server starting");
+namespace SendOrder {
+    window.addEventListener("load", init);
 
-import Http = require("http");
-import Url = require("url");
-
-interface AssocStringString {
-    [key: string]: string;
-}
-
-let port: number = process.env.PORT;
-if (port == undefined)
-    port = 8100;
-
-let server: Http.Server = Http.createServer();
-server.addListener("listening", handleListen);
-server.addListener("request", handleRequest);
-server.listen(port);
-
-function handleListen(): void {
-    console.log("Listening on port: " + port);
-}
-
-function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
-    console.log("Request received");
-
-    console.log(_request.url);
-    let query: AssocStringString = Url.parse(_request.url, true).query;
-    console.log(query);
-    let key: string;
+    let button: HTMLElement = document.getElementById("button");
     
-    _response.setHeader("Access-Control-Allow-Origin", "*");
-    _response.setHeader("content-type", "text/html; charset=utf-8");
-    
-    for (key in query)
-        _response.write(key + ":" + query[key]);
+    function init(_event: Event): void {
+        console.log("Init");
+       // button.addEventListener("click", handleClickOnButton);
+        
+    }
 
-//    _response.setHeader("Access-Control-Allow-Origin", "*");
-//    _response.setHeader("content-type", "text/html; charset=utf-8");
-    _response.write("Ihre Bestellung:");
-    _response.end();
+    function handleClickOnButton(_event: Event): void {
+        let order: HTMLCollection = document.getElementById("eissorten").children;
+   
+//        let style: CSSStyleDeclaration = (<HTMLElement>_event.target).style;
+//        console.log(style.backgroundColor);
+//        sendRequest(order);
+    }
+
+    function sendRequest(_color: string): void {
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        xhr.open("GET", "http://localhost:8100?color=" , true);
+        xhr.open("GET", "https://eiia-2.herokuapp.com/?color=" , true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
+
+    function handleStateChange(_event: ProgressEvent): void {
+        var xhr: XMLHttpRequest = (<XMLHttpRequest>_event.target);
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
+            alert(xhr.response);
+        }
+    }
 }

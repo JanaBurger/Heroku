@@ -1,5 +1,5 @@
 /*
-Aufgabe: 9
+Aufgabe: 10
 Name: Jana Burger
 Matrikel: 255076
 Datum: 4.6.17
@@ -7,14 +7,15 @@ Datum: 4.6.17
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
 Er wurde nicht kopiert und auch nicht diktiert. Teile der Aufgabe zusammen mit Jacqueline und Selina erstellt*/
 
-namespace Form {
+namespace SendOrder {
 
     window.addEventListener("load", init);
 
     let eissorten: string[] = ["Erdbeere", "Mango", "Himbeere", "Maracuja", "Banane",
         "Apfel", "Zitrone", "Ananas", "Melone"];
 
-    let milchsorten: string[] = ["Schokolade", "Vanille", "Haselnuss", "Walnuss", "Joghurt", "Stracciatella", "Pistazie", "Nugat"];
+    let milchsorten: string[] = ["Schokolade", "Vanille", "Haselnuss", "Walnuss", "Joghurt", 
+        "Stracciatella", "Pistazie", "Nugat"];
 
     let toppings: string[] = ["Sahne", "Schokosauce", "Erdbeersauce", "Schokostreusel",
         "Gummibaerchen", "Smarties", "kleine Cookies", "bunte Streusel"];
@@ -62,7 +63,7 @@ namespace Form {
             label.appendChild(input);
             fruchtInputs.push(input);
             fieldsetEissorte.appendChild(label);
-
+            input.name = eissorten[i];
             input.className = "checkbox";
 
             console.log(eissorten[i]);
@@ -81,6 +82,8 @@ namespace Form {
             label.appendChild(input);
             milchInputs.push(input);
             fieldsetMilchsorte.appendChild(label);
+            
+            input.name = milchsorten[i];
 
             input.className = "checkbox";
 
@@ -99,12 +102,12 @@ namespace Form {
             fieldsetTopping.appendChild(label);
 
             input.className = "toppings";
-
+            input.name = toppings[i];
             console.log(toppings[i]);
         }
     }
 
-    function handleChange(_event: Event): void {
+   function handleChange(_event: Event): void {
         console.log(_event);
         let bestellung: HTMLElement = document.getElementById("bestellung");
         bestellung.innerText = "";
@@ -157,12 +160,12 @@ namespace Form {
         for (let i: number = 0; i < proof.length; i++) {
             console.log(proof.length);
             if (proof[i].validity.valid == false) {
-                alert("Die Eingabe ist nicht korrekt.");
-                location.reload();
+               // alert("Die Eingabe ist nicht korrekt.");
+                //location.reload();
             }
             else {
-                alert("Vielen Dank fuer Ihre Bestellung!");
-                location.reload();
+               // alert("Vielen Dank fuer Ihre Bestellung!");
+               // location.reload();
             }
         }
     }

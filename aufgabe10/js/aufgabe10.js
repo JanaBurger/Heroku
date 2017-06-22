@@ -1,17 +1,18 @@
 /*
-Aufgabe: 9
+Aufgabe: 10
 Name: Jana Burger
 Matrikel: 255076
 Datum: 4.6.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe.
 Er wurde nicht kopiert und auch nicht diktiert. Teile der Aufgabe zusammen mit Jacqueline und Selina erstellt*/
-var Form;
-(function (Form) {
+var SendOrder;
+(function (SendOrder) {
     window.addEventListener("load", init);
     let eissorten = ["Erdbeere", "Mango", "Himbeere", "Maracuja", "Banane",
         "Apfel", "Zitrone", "Ananas", "Melone"];
-    let milchsorten = ["Schokolade", "Vanille", "Haselnuss", "Walnuss", "Joghurt", "Stracciatella", "Pistazie", "Nugat"];
+    let milchsorten = ["Schokolade", "Vanille", "Haselnuss", "Walnuss", "Joghurt",
+        "Stracciatella", "Pistazie", "Nugat"];
     let toppings = ["Sahne", "Schokosauce", "Erdbeersauce", "Schokostreusel",
         "Gummibaerchen", "Smarties", "kleine Cookies", "bunte Streusel"];
     //    Preise
@@ -46,6 +47,7 @@ var Form;
             label.appendChild(input);
             fruchtInputs.push(input);
             fieldsetEissorte.appendChild(label);
+            input.name = eissorten[i];
             input.className = "checkbox";
             console.log(eissorten[i]);
         }
@@ -59,6 +61,7 @@ var Form;
             label.appendChild(input);
             milchInputs.push(input);
             fieldsetMilchsorte.appendChild(label);
+            input.name = milchsorten[i];
             input.className = "checkbox";
             console.log(milchsorten[i]);
         }
@@ -71,6 +74,7 @@ var Form;
             topInputs.push(input);
             fieldsetTopping.appendChild(label);
             input.className = "toppings";
+            input.name = toppings[i];
             console.log(toppings[i]);
         }
     }
@@ -119,14 +123,10 @@ var Form;
         for (let i = 0; i < proof.length; i++) {
             console.log(proof.length);
             if (proof[i].validity.valid == false) {
-                alert("Die Eingabe ist nicht korrekt.");
-                location.reload();
             }
             else {
-                alert("Vielen Dank fuer Ihre Bestellung!");
-                location.reload();
             }
         }
     }
-})(Form || (Form = {}));
+})(SendOrder || (SendOrder = {}));
 //# sourceMappingURL=aufgabe10.js.map
