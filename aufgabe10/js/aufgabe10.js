@@ -123,6 +123,8 @@ var SendOrder;
         for (let i = 0; i < proof.length; i++) {
             console.log(proof.length);
             if (proof[i].validity.valid == false) {
+                alert("Die Eingabe ist nicht korrekt.");
+                location.reload();
             }
             else {
             }
