@@ -27,7 +27,7 @@ function handleRequest(_request, _response) {
         }
         _response.write(key + ":" + " " + query[key] + "<br>");
     }
-    _response.write("<br>" + "Vielen Dank f�r Ihre Bestellung. Wir senden Ihnen eine Best�tigung per E-Mail zu.");
+    _response.write("<br>" + "Vielen Dank f�r Ihre Bestellung und Guten Appetit.");
     //    _response.setHeader("Access-Control-Allow-Origin", "*");
     //    _response.setHeader("content-type", "text/html; charset=utf-8");
     //_response.write("Ich höre Stimmen!");

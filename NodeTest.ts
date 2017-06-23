@@ -42,7 +42,7 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
         _response.write(key + ":" + " " + query[key] + "<br>");
         
     }
-    _response.write("<br>" + "Vielen Dank für Ihre Bestellung. Wir senden Ihnen eine Bestätigung per E-Mail zu.");
+    _response.write("<br>" + "Vielen Dank für Ihre Bestellung und Guten Appetit.");
    
     //    _response.setHeader("Access-Control-Allow-Origin", "*");
     //    _response.setHeader("content-type", "text/html; charset=utf-8");
