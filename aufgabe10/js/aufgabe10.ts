@@ -2,7 +2,7 @@
 Aufgabe: 10
 Name: Jana Burger
 Matrikel: 255076
-Datum: 4.6.17
+Datum: 23.6.17
     
 Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. 
 Er wurde nicht kopiert und auch nicht diktiert. Teile der Aufgabe zusammen mit Jacqueline und Selina erstellt*/
