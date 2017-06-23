@@ -31,6 +31,8 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
     _response.setHeader("Access-Control-Allow-Origin", "*");
     _response.setHeader("content-type", "text/html; charset=utf-8");
 
+    _response.write("Ihre Bestellung: " + "<br>");
+   
     for (key in query) {
 
 
