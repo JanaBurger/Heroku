@@ -39,10 +39,10 @@ function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerRes
         if (query[key] == "0") {
             continue;
         }
-        _response.write(key + ":" + " " + query[key] + "<br>");
+        _response.write(key + ":" + " " + query[key] + "<br>" + "<br>");
         
     }
-    _response.write("Vielen Dank für Ihre Bestellung. Wir senden Ihnen eine Bestätigung per E-Mail zu.");
+    _response.write("<br>" + "Vielen Dank für Ihre Bestellung. Wir senden Ihnen eine Bestätigung per E-Mail zu.");
    
     //    _response.setHeader("Access-Control-Allow-Origin", "*");
     //    _response.setHeader("content-type", "text/html; charset=utf-8");
